@@ -49,6 +49,7 @@
                         --> 
                         <field name="portada" widget="image" class="oe_avatar"/>
                         <field name="valoracion_lector"/>
+                        <field name="valoracion_critica"/>
                     </group>
                 </group>
                 <group>

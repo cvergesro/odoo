@@ -85,6 +85,11 @@ class BibliotecaComic(models.Model):
         'Valoración media lectores',
         digits=(14, 4),  # Precision opcional (total, decimales),
     )
+    
+    valoracion_critica = fields.Float(
+        'Valoración media critica',
+        digits=(14, 4),  # Precision opcional (total, decimales),
+    )
     # Relación muchos a muchos de autores utilizando un "partner"
     # de Odoo (Es un elemento que puede ser empresa o individuo)
     # https://stackoverflow.com/questions/22927605/what-is-res-partner
