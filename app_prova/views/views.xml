@@ -11,6 +11,7 @@
           <field name="prioridad"/>
           <field name="urgente"/>
           <field name="realizada"/>
+          <field name="asignada"/>
         </tree>
       </field>
     </record>
@@ -21,7 +22,7 @@
     <record model="ir.actions.act_window" id="app_prova.action_window">
       <field name="name">Listado de Tareas Pendiente</field>
       <field name="res_model">app_prova.app_prova</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree,form,kanban</field>
     </record>
 
 

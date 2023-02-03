@@ -1,1 +1,0 @@
-{'name':'Mi primer módulo chispas'}
