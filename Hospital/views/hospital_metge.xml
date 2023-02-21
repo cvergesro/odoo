@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='hospital_metge_action' model='ir.actions.act_window'>
+        <field name="name">Metges</field>
+        <field name="res_model">hospital.metge</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Metges" id="hospital_metge_menu" parent="hospital_base_menu" action="hospital_metge_action" />
+
+    <!-- VISTA DE FORMULARIO -->
+    <record id="hospital_metge_view_form" model="ir.ui.view">
+        <field name="name">Afegir metge</field>
+        <field name="model">hospital.metge</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="nom" />
+                        <field name="cognom"/>
+                        <field name="num_colegiat" />
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista Tree -->
+    <record id="hospital_metge_view_tree" model="ir.ui.view">
+        <field name="name">Metges</field>
+        <field name="model">hospital.metge</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nom" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>

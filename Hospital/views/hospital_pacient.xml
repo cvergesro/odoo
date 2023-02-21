@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id='hospital_pacient_action' model='ir.actions.act_window'>
+        <field name="name">Pacients</field>
+        
+        <field name="res_model">hospital.pacient</field>
+       
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem name="Hospital" id="hospital_base_menu" />
+
+    <menuitem name="Pacients" id="hospital_pacient_menu" parent="hospital_base_menu" action="hospital_pacient_action" />
+
+ 
+    <record id="hospital_pacient_view_form" model="ir.ui.view">
+        <field name="name">Afegir pacient</field>
+        <field name="model">hospital.pacient</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="nom" />
+                        <field name="cognoms" />
+                        <field name="simptomes" widget="many2many_tags" />
+
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Definición de la vista Tree -->
+    <record id="hospital_pacient_view_tree" model="ir.ui.view">
+        <field name="name">Llista de pacients</field>
+          <field name="model">hospital.pacient</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nom" />
+                <field name="cognoms" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Definición de la vista busqueda-->
+    <record id="hospital_pacient_view_search" model="ir.ui.view">
+        <field name="name">Cercar Pacients</field>
+        <field name="model">hospital.pacient</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="nom" />
+                <field name="cognoms" />
+            </search>
+        </field>
+    </record>
+
+
+</odoo>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='hospital_diagnostic_action' model='ir.actions.act_window'>
+        <field name="name">Diagnòstic</field>
+      
+        <field name="res_model">hospital.diagnostic</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <menuitem name="Diagnostic" id="hospital_diagnostic_menu" parent="hospital_base_menu" action="hospital_diagnostic_action" />
+
+    <!-- VISTA DE FORMULARIO -->
+    <record id="hospital_diagnostic_view_form" model="ir.ui.view">
+        <field name="name">Diagnosticar</field>
+        <field name="model">hospital.diagnostic</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="diagnostic" />
+                        <field name="pacient" />
+                        <field name="metge" />
+                    </group>
+                </group>               
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista Tree -->
+    <record id="hospital_diagnostic_view_tree" model="ir.ui.view">
+        <field name="name">Diagnòstics</field>
+        <field name="model">hospital.diagnostic</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="pacient" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>
