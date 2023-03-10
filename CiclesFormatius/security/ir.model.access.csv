@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+security_cicle,cicle.formatiu_default,model_cicle_formatiu,,1,0,0,0
+security_cicle_director,cicle.formatiu_director,model_cicle_formatiu,grup_director,1,1,1,1
+security_cicle_profesor,cicle.formatiu_profesor,model_cicle_formatiu,grup_profesor,1,0,0,0
+security_cicle_modul,cicle.formatiu.modul_default,model_cicle_formatiu_modul,,1,0,0,0
+security_cicle_modul_director,cicle.formatiu.modul_director,model_cicle_formatiu_modul,grup_director,1,1,1,1
+security_cicle_modul_profesor,cicle.formatiu.modul_profesor,model_cicle_formatiu_modul,grup_profesor,1,0,0,0
+security_cicle_profesor_director,cicle.formatiu.profesor_director,model_cicle_formatiu_profesor,grup_director,1,1,1,1
+security_cicle_profesor_profesor,cicle.formatiu.profesor_profesor,model_cicle_formatiu_profesor,grup_profesor,1,0,0,0
+security_cicle_alumne,cicle.formatiu.alumne_default,model_cicle_formatiu_alumne,,1,0,0,0
+security_cicle_alumne_director,cicle.formatiu.alumne_director,model_cicle_formatiu_alumne,grup_director,1,1,1,1
+security_cicle_alumne_profesor,cicle.formatiu.alumne_profesor,model_cicle_formatiu_alumne,grup_profesor,1,0,0,0

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+
+    <record id='cicle_formatiu_action' model='ir.actions.act_window'>
+        <field name="name">Cicles Formatius</field>
+    
+        <field name="res_model">cicle.formatiu</field>
+        
+        <field name="view_mode">tree,kanban,form</field>
+    </record>
+
+
+    <menuitem name="Cicles Formatius" id="cicle_base_menu" />
+
+    <menuitem name="Cicles" id="cicle_formatiu_menu" parent="cicle_base_menu" action="cicle_formatiu_action" />
+
+    <record id="cicle_formatiu_view_form" model="ir.ui.view">
+        <field name="name">Formulario de cicles formatius</field>
+        <field name="model">cicle.formatiu</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="nom" />
+                        <field name="tipus" />
+                        <field name="grau" />
+                        <field name="moduls" />
+                    </group>
+                </group>
+                <group>
+                    <field name="descripcio" />
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Definición de la vista Tree -->
+    <record id="cicle_formatiu_view_tree" model="ir.ui.view">
+        <field name="name">Lista de cicles formatius</field>
+          <field name="model">cicle.formatiu</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nom" />
+                <field name="tipus" />
+                <field name="grau" />
+  
+            </tree>
+        </field>
+    </record>
+
+    <!-- Definición de la vista busqueda-->
+    <record id="cicle_formatiu_view_search" model="ir.ui.view">
+        <field name="name">Búsqueda de Cicles Formatius</field>
+        <field name="model">cicle.formatiu</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="nom" />
+                <field name="tipus" />
+                <field name="grau" />
+
+            </search>
+        </field>
+    </record>
+
+
+    <record id="cicle_formatiu_view_kanban" model="ir.ui.view">
+        <field name="name">Lista de Cicles Formatius</field>
+        <field name="model">cicle.formatiu</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="tipus">
+            
+                <field name="nom" />
+                <field name="grau" />
+
+               
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_card oe_kanban_global_click">
+                            <field name="nom" />
+                            <field name="grau" />
+
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='cicle_formatiu_profesor_action' model='ir.actions.act_window'>
+        <field name="name">Profesors</field>
+        <field name="res_model">cicle.formatiu.profesor</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <menuitem name="Profesors" id="cicle_formatiu_profesor_menu" parent="cicle_base_menu" action="cicle_formatiu_profesor_action" />
+
+    <!-- VISTA DE FORMULARIO -->
+    <record id="cicle_formatiu_profesor_view_form" model="ir.ui.view">
+        <field name="name">Profesors</field>
+        <field name="model">cicle.formatiu.profesor</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="nom" />
+                        <field name="any" />
+                        <field name="departament" />
+                        <field name="titulacio" />
+                        <field name="moduls" />
+                    </group>
+                    <group>
+                        <field name="imatge" widget="image" class="oe_avatar" />
+                      
+                    </group>
+                </group>               
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista Tree -->
+    <record id="cicle_formatiu_profesor_view_tree" model="ir.ui.view">
+        <field name="name">Lista de Formatius Prestados</field>
+        <field name="model">cicle.formatiu.profesor</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="departament" />
+                <field name="nom" />
+            </tree>
+        </field>
+    </record>
+
+     <record id="cicle_formatiu_profesor_view_kanban" model="ir.ui.view">
+        <field name="name">Profesors</field>
+        <field name="model">cicle.formatiu.profesor</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="departament">
+                <!-- Indicamos que atributos usaremos al hacer la vista Kanban -->
+                <field name="nom" />
+                <field name="imatge" />
+                <!-- Plantilla QWeb para indicar como es la tarjeta Kanban-->
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_card oe_kanban_global_click">
+                            <field name="nom" />
+                        </div>
+                        <div class="o_kanban_image_inner_pic">
+                            <img alt="Foto" t-att-src="kanban_image('cicle.formatiu.profesor', 'imatge', record.id.raw_value)" style="width:30mm; height:30mm;" />
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+</odoo>
